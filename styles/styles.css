@@ -1,0 +1,14 @@
+body{
+  /*image used*/
+  background-image: url("http://pixartimes.com/wp-content/uploads/2013/10/WALL-E-Buy-N-Large.jpg");
+  /*full height*/
+  height: 100vh;
+  /*center and scale the image*/
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+}
+
+.player{
+  height: 100px;
+}
