@@ -43,71 +43,73 @@
       <div class="col-xs-1" id="player2"><img src="images/Eve.png" class="player" /></div>
     </div>
 
-  </div> <!-- closes container div -->
+  </div>
+  <!-- closes container div -->
 
-<script>
-$(document).ready(function(){
-  var player1
-  var player2
-  var position1
-  var position2
-  var gameOn = false;
+  <script>
+    $(document).ready(function() {
+      var player1 = $("#player1");
+      var player2 = $("#player2");
+      var position1 = 0;
+      var position2 = 0;
+      var gameOn = false;
 
-  //event listener for gameOn
-  $("#go").click(function(e){
-      e.preventDefault();
-      gameOn = true;
-      console.log(gameOn);
-  });
-
-  $("#reset").click(function(e){
-    e.preventDefault();
-    gameOn = false;
-    console.log(`gameOn is ${gameOn}.`);
-  });
-
-  $("body").keydown(function(e){
-    e.preventDefault();
-    if(e.which === 39 && gameOn === true){
-      $("#player1").animate({
-        left: "+=100px"
+      //event listener for gameOn
+      $("#go").click(function(e) {
+        e.preventDefault();
+        gameOn = true;
+        console.log(gameOn);
       });
-      console.log("right arrow pressed");
-    }
 
-    if(e.which === 90 && gameOn === true){
-      $("#player2").animate({
-        left: "+=100px"
+      $("#reset").click(function(e) {
+        e.preventDefault();
+        reset();
       });
-      console.log("z was pressed");
-    }
-  });
 
-});
+      function reset() {
+        player1.animate({
+          left: "0"
+        });
+        player2.animate({
+          left: "0"
+        });
+        position1 = 0;
+        position2 = 0;
+        gameOn = false;
+      }
+      $("body").keydown(function(e) {
+        if (e.which === 39 && gameOn === true) {
+          $("#player1").animate({
+            left: "+=100px"
+          });
+          position1 += 5;
+          console.log(position1);
+        }
 
-//if win = true, gameOn = false && reset = gameOn = false;
+        if (e.which === 90 && gameOn === true) {
+          $("#player2").animate({
+            left: "+=100px"
+          });
+          position2 += 5;
+          console.log(position2);
+        }
 
+        evaluateWin();
+      });
 
-//event listener for keypress player1
+      function evaluateWin() {
+        if (position1 === 55 && position2 !== 55) {
+          alert("Wall-E Wins!");
+          reset();
+        } else if (position2 === 55 && position1 !== 55) {
+          alert("Eva Wins!");
+          reset();
+        }
+      }
 
+    });
 
-//event listener for keypress player2
-
-//track player1 position
-//track player2 position
-
-//check for win
-//
-// function movePlayer(){
-//
-// }
-//
-//
-// //click right arrow key == move Wall-E to the right one step
-
-
-
-</script>
+  </script>
 
 
 </body>
