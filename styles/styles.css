@@ -1,14 +1,125 @@
-body{
+@font-face {
+    font-family: 'gunship';
+    src: url('gunship.ttf') format('truetype'),
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  font-family: 'gunship', sans-serif;
   /*image used*/
-  background-image: url("http://pixartimes.com/wp-content/uploads/2013/10/WALL-E-Buy-N-Large.jpg");
+  background-image: url("https://xmbill.files.wordpress.com/2007/06/gpw-200702-49-nasa-iss007-e-10807-space-sunset-20030721-pacific-ocean-large.jpg");
   /*full height*/
   height: 100vh;
   /*center and scale the image*/
   background-position: center;
   background-repeat: no-repeat;
   /*background-attachment: fixed;*/
+  background-size: cover;
+
+}
+
+h1 {
+  font-family: 'gunship', sans-serif;
+  color: #EA2E39;
+  font-size: 4vw;
+  margin-top: 5vw
+}
+
+p {
+  font-size: 12px;
+}
+
+h3 {
+  font-family: 'gunship', sans-serif;
+  color: white;
+  font-size: 2vw;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.fixed-height{
+  height: 90px;
+}
+.gameboard{
+  height: 200px;
+  line-height: 200px;
+  margin-left: -10vw;
+}
+
+.infobox {
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: #CCCED1;
+  font-weight: bold;
+  margin-top: 4vw;
+  text-align:center;
+}
+
+.infobox p {
+  margin-top:.7vw;
 }
 
 .player{
+  height: 125px;
+  -webkit-filter: drop-shadow(10px 7px 5px #111);
+  filter: drop-shadow(10px 7px 5px #111;
+}
+
+.reset {
+  background-color: #EA2E39;
+}
+
+.top {
   height: 100px;
+  line-height: 100px;
+}
+
+
+/*animations*/
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInLeft {
+  animation-name: slideInLeft;
+  animation-duration: 1s;
+  animation-delay: 500ms;
+}
+
+/*win animation*/
+@keyframes jackInTheBox {
+  from {
+    opacity: 0;
+    transform: scale(0.1) rotate(30deg);
+    transform-origin: center bottom;
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  70% {
+    transform: rotate(3deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.jackInTheBox {
+  animation-name: jackInTheBox;
+  animation-duration: 1s;
 }

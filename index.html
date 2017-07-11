@@ -9,6 +9,12 @@
   <!-- Bootstrap CDN -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+  <!-- bootstrap JS -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates: 400,800" rel="stylesheet">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="styles/styles.css">
 
@@ -25,93 +31,33 @@
 <body>
   <div class="container">
 
-    <div class="row">
-      <div class=col-xs-2 info></div>
-      <div class="col-xs-8">
-        <h1 class="text-center">Wall-E Racing Game</h1></div>
-      <div class=col-xs-2 info></div>
+    <div class="row header">
+      <div class="col-xs-2 infobox" id="wall-e-info"><p>Tap<i class="fa fa-arrow-right fa-2x"></i> to move WALL-E</p></div>
+
+      <div class="col-xs-8"><h1 class="text-center">Wall-E Race</h1></div>
+
+      <div class="col-xs-2 infobox" id="eve-info"><p>Tap Z to move<br/> Eve</p></div>
+
     </div>
     <!-- row closed-->
-    <div class="row col-xs-12 top text-center">
-      <input type="button" id="go" value="go">
-      <input type="button" id="reset" value="try again!">
+
+    <div class="row fixed-height">
+      <h3 class="panel-body jackInTheBox text-center" id="instructions">PRESS SPACE BAR TO BEGIN!</h3>
+    </div>
+    <!-- row closed-->
+
+    <div class="row gameboard">
+      <div class="col-xs-1" id="player1"><img src="images/Wall-E.png" class="player slideInLeft" /></div>
     </div>
     <div class="row gameboard">
-      <div class="col-xs-1" id="player1"><img src="images/Wall-E.png" class="player" /></div>
-    </div>
-    <div class="row gameboard">
-      <div class="col-xs-1" id="player2"><img src="images/Eve.png" class="player" /></div>
+      <div class="col-xs-1" id="player2"><img src="images/Eve.png" class="player slideInLeft" /></div>
     </div>
 
+    <div class="bottom">
+      <button type="button" class="btn btn-block" id="reset">Try Again!</button>
+    </div>
   </div>
   <!-- closes container div -->
-
-  <script>
-    $(document).ready(function() {
-      var player1 = $("#player1");
-      var player2 = $("#player2");
-      var position1 = 0;
-      var position2 = 0;
-      var gameOn = false;
-
-      //event listener for gameOn
-      $("#go").click(function(e) {
-        e.preventDefault();
-        gameOn = true;
-        console.log(gameOn);
-      });
-
-      $("#reset").click(function(e) {
-        e.preventDefault();
-        reset();
-      });
-
-      function reset() {
-        player1.animate({
-          left: "0"
-        });
-        player2.animate({
-          left: "0"
-        });
-        position1 = 0;
-        position2 = 0;
-        gameOn = false;
-      }
-      $("body").keydown(function(e) {
-        if (e.which === 39 && gameOn === true) {
-          $("#player1").animate({
-            left: "+=100px"
-          });
-          position1 += 5;
-          console.log(position1);
-        }
-
-        if (e.which === 90 && gameOn === true) {
-          $("#player2").animate({
-            left: "+=100px"
-          });
-          position2 += 5;
-          console.log(position2);
-        }
-
-        evaluateWin();
-      });
-
-      function evaluateWin() {
-        if (position1 === 55 && position2 !== 55) {
-          alert("Wall-E Wins!");
-          reset();
-        } else if (position2 === 55 && position1 !== 55) {
-          alert("Eva Wins!");
-          reset();
-        }
-      }
-
-    });
-
-  </script>
-
-
 </body>
 
 </html>
