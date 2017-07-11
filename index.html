@@ -43,9 +43,73 @@
       <div class="col-xs-1" id="player2"><img src="images/Eve.png" class="player" /></div>
     </div>
 
-
-
   </div> <!-- closes container div -->
+
+<script>
+$(document).ready(function(){
+  var player1
+  var player2
+  var position1
+  var position2
+  var gameOn = false;
+
+  //event listener for gameOn
+  $("#go").click(function(e){
+      e.preventDefault();
+      gameOn = true;
+      console.log(gameOn);
+  });
+
+  $("#reset").click(function(e){
+    e.preventDefault();
+    gameOn = false;
+    console.log(`gameOn is ${gameOn}.`);
+  });
+
+  $("body").keydown(function(e){
+    e.preventDefault();
+    if(e.which === 39 && gameOn === true){
+      $("#player1").animate({
+        left: "+=100px"
+      });
+      console.log("right arrow pressed");
+    }
+
+    if(e.which === 90 && gameOn === true){
+      $("#player2").animate({
+        left: "+=100px"
+      });
+      console.log("z was pressed");
+    }
+  });
+
+});
+
+//if win = true, gameOn = false && reset = gameOn = false;
+
+
+//event listener for keypress player1
+
+
+//event listener for keypress player2
+
+//track player1 position
+//track player2 position
+
+//check for win
+//
+// function movePlayer(){
+//
+// }
+//
+//
+// //click right arrow key == move Wall-E to the right one step
+
+
+
+</script>
+
+
 </body>
 
 </html>
