@@ -1,21 +1,20 @@
 # Wall-E Themed Racing Game
 
-2 player racing game
+This game allows 2 players to move either Wall-E or Eve, from the Disney film Wall-E, across the browser window to compete for the win!
 
 ## Technologies Used
-
-*What technologies did you use to develop this project? (bullet points)*
+- HTML 5
+- CSS3
+- JavaScript
+- JQuery
 
 ## Existing Features
-
-*What features does your racing game have? (bullet points)*
+- Players can't move until space bar is pressed 
+- The winner's name shows up on the display on win
+- Characters slide back in place when game completes 
 
 ## Planned Features
-
-*What changes would you make to your project if you continue to work on it? (bullet points)*
-
+- Include animation for the players entering the screen and when traveling across the screen
+- A reset button displaying a pulse animation upon completion of the game 
+- A score keeper
 ---
-
-##### Screenshot (optional)
-
-##### Link to hosted project on GitHub pages or BitBalloon (optional)
