@@ -41,7 +41,7 @@ $(document).ready(function() {
       position1 += 1;
       $("#player1").animate({
         left: "+=100px"
-      });
+      }, 150);
       console.log(position1);
     }
 
@@ -49,7 +49,7 @@ $(document).ready(function() {
       position2 += 1;
       $("#player2").animate({
         left: "+=100px"
-      });
+      }, 150);
       console.log(position2);
     }
 
