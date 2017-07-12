@@ -1,4 +1,3 @@
-//text.box jquery show on div at win
 $(document).ready(function() {
   var player1 = $("#player1");
   var player2 = $("#player2");
@@ -15,6 +14,11 @@ $(document).ready(function() {
       console.log(gameOn);
     }
   });
+
+  $("#reset").click(function(e) {
+        e.preventDefault();
+        reset();
+      });
 
   function reset() {
     player1.animate({
