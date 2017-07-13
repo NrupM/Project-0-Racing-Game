@@ -2,7 +2,7 @@
 
 This game allows 2 players to move either Wall-E or Eve, from the Disney film Wall-E, across the browser window to compete for the win!
 
-![Alt text](images/wall-e-screenshot.tiff)
+![Alt text](http://imgur.com/a/k7Axh)
 
 ## Technologies Used
 - HTML 5
